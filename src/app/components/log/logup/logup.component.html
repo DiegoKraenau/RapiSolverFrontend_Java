@@ -1,0 +1,29 @@
+<div id="mensaje2" class="alert alert-success " style="display: none">
+  <strong> <p class="padd-top" id="mensaje"></p></strong>
+</div>
+<br>
+
+<div id="labelCrearUsuario"><h2>Registrar Usuario</h2></div><br>
+
+
+<form id="formulario" class="form-signin" >
+
+  <div class="form-group" >
+    <label >Nombre:</label> <input type="text" class="form-control col-lg-3 col-md-3 col-xs-12" placeholder="Ingrese Nombres" v-model="usuario.name" minlength="5" maxlength="40" required pattern="[A-Za-z]+">
+  </div>
+  <div class="form-group" >
+    <label >Apellido:</label> <input type="text" class="form-control col-lg-3 col-md-3 col-xs-12" placeholder="Ingrese Apellidos" v-model="usuario.lastName"  minlength="5" maxlength="40" required pattern="[A-Za-z]+">
+  </div>
+  <div class="form-group" >
+    <label >Email:</label> <input type="email" class="form-control col-lg-3 col-md-3 col-xs-12" placeholder="Ingrese un email" v-model="usuario.email">
+  </div>
+  <div class="form-group" >
+    <label >Contraseña::</label> <input type="password" class="form-control col-lg-3 col-md-3 col-xs-12" placeholder="Ingrese una contraseña" v-model="usuario.contraseña" minlength="5" maxlength="40" >
+  </div>
+  <div class="form-group">
+    <button  type="submit"  class="btn btn-primary btn-lg">Agregar</button>
+    <br>
+    <br>
+    <a routerLink="" class="enu" style="color:#000000">No , gracias</a>
+  </div>
+</form>

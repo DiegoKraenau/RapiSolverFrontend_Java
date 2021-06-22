@@ -1,20 +1,52 @@
-<p>services works!</p>
+<div class="container">
+  <div class="card">
+    <div class="card-header text-white bg-secondary" >Buscar Servicios</div>
+    <div class="card-body">
+      <div class="form-inline">
+        <form >
+          <div class="row">
+            <div class="col-8">
+              <input  type="text" class="form-control" id="servicioNombre" name="servicioNombre" placeholder="Buscar por nombre"  v-model="busqueda.nombre">
+            </div>
+            <div class="col">
+              <button type="submit" class="btn btn-primary" >Buscar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <br>
+      <input type="radio" > Ordenar por bajo Costo<br>
 
-<table class="table">
-  <thead>
-  <tr>
-    <th scope="col">#</th>
-    <th scope="col">Detail</th>
-    <th scope="col">Price</th>
-    <th scope="col">Supplier</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let service of services">
-    <td>{{service.id}}</td>
-    <td>{{service.detail}}</td>
-    <td>{{service.price}}</td>
-    <td>{{service.supplierId}}</td>
-  </tr>
-  </tbody>
-</table>
+    </div>
+
+    <div class="list-group">
+      <a href="#" class="list-group-item active" style="background-color:#FFFFFF" v-for="detalle in detalles" :key="detalle.serviceDetailsId">
+        <div class="media col-md-3">
+          <figure class="pull-left">
+            <img class="media-object img-rounded img-responsive"  src="../assets/img4.jpg"  >
+          </figure>
+        </div>
+        <div class="col-md-6">
+          <h4 class="list-group-item-heading"> <strong>Servicio: </strong></h4>
+          <br>
+          <p class="list-group-item-text"> <strong>Descripcion:</strong></p>
+          <br>
+          <p class="list-group-item-text"> <strong>Categoria:</strong></p>
+          <br>
+          <p class="list-group-item-text"> <strong>Costo: S/</strong></p>
+        </div>
+        <div class="col-md-3 text-center">
+          <br>
+          <br>
+          <br>
+          <a :href="'/detalle/' + detalle.serviceDetailsId +'/'+ id2" class="btn btn-primary">Ver</a>
+
+
+        </div>
+      </a>
+    </div>
+
+
+  </div>
+
+</div>

@@ -1,11 +1,26 @@
 <div>
-  <nav class="navbar navbar-expand navbar-dark bg-dark">
-    <div class="navbar-nav mr-auto">
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <a href="http://localhost:8080" class="navbar-brand" id="logo">RapiSolver</a>
+    <ul class="navbar-nav">
       <li class="nav-item">
-        <a routerLink="services" class="nav-link">Services</a>
+        <a *ngIf="router.url==='/' || router.url==='/about' || router.url==='/register'" routerLink="" class="nav-link">Inicio Sesion</a>
       </li>
-
-    </div>
+      <li class="nav-item">
+        <a *ngIf="router.url!=='/' && router.url!=='/about' && router.url!=='/register'" routerLink="profile" class="nav-link" >Mi perfil</a>
+      </li>
+      <li class="nav-item">
+        <a *ngIf="router.url!=='/' && router.url!=='/about' && router.url!=='/register'" routerLink="service_add" class="nav-link" >Publicar Servicio</a>
+      </li>
+      <li class="nav-item">
+        <a *ngIf="router.url!=='/' && router.url!=='/about' && router.url!=='/register'" routerLink="services" class="nav-link" >Buscar Servicio</a>
+      </li>
+      <li class="nav-item">
+        <a *ngIf="router.url!=='/' && router.url!=='/about' && router.url!=='/register'" routerLink="providers" class="nav-link" >Buscar Proveedor</a>
+      </li>
+      <li class="nav-item">
+        <a *ngIf="router.url==='/' || router.url==='/about' || router.url==='/register'" routerLink="about" class="nav-link">¿Quienes somos?</a>
+      </li>
+    </ul>
   </nav>
 
   <div class="container mt-3">
