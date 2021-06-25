@@ -6,14 +6,16 @@ import {AboutComponent} from "./components/log/about/about.component";
 import {ServiceAddComponent} from "./components/service/service-add/service-add.component";
 import {ProfileViewComponent} from "./components/profile/profile-view/profile-view.component";
 import {LogupComponent} from "./components/log/logup/logup.component";
+import {ServiceSearchComponent} from "./components/service/service-search/service-search.component";
 
 const routes: Routes = [
   {path:'',component:LoginComponent},
   {path:'register',component:LogupComponent},
   {path:'about',component:AboutComponent},
-  {path:'services',component:ServicesComponent},
+  {path:'services',component:ServiceSearchComponent},
   {path:'service_add',component:ServiceAddComponent},
-  {path:'profile',component:ProfileViewComponent}
+  {path:'profile',component:ProfileViewComponent},
+  {path:'home',component:ServicesComponent}
 ];
 
 @NgModule({

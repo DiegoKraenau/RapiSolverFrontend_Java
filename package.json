@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "stubs": "stubby -s 1500 -d stubbs/stubby.json -w"
   },
   "private": true,
   "dependencies": {
@@ -21,6 +22,7 @@
     "@angular/platform-browser-dynamic": "~12.0.4",
     "@angular/router": "~12.0.4",
     "rxjs": "~6.6.0",
+    "stubby": "^5.1.0",
     "tslib": "^2.1.0",
     "zone.js": "~0.11.4"
   },

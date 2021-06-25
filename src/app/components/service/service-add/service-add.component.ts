@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {ServiceService} from "../../../services/Rapiservice/service.service";
 
 @Component({
   selector: 'app-service-add',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServiceAddComponent implements OnInit {
 
-  constructor() { }
+  form:FormGroup;
+
+  constructor(private fb:FormBuilder ,private serviceService:ServiceService) {
+    this.form=this.fb.group({
+      name:['',Validators.required],
+      description:['',Validators.required],
+      costo:['',Validators.required],
+      categoria:['',Validators.required]
+    })
+  }
 
   ngOnInit(): void {
   }
+
+
 
 }

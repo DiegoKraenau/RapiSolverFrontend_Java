@@ -14,7 +14,11 @@ export class ServicesComponent implements OnInit {
   constructor(private serviceService:ServiceService) { }
 
   ngOnInit(): void {
-    this.serviceService.getServices().subscribe(data=>{this.services=data; console.log(data)},error => {console.log(error);})
+    this.getLastestServices();
+  }
+
+  getLastestServices(){
+    this.serviceService.getLastestServices().subscribe(data=>{this.services=data; console.log(data)},error => {console.log(error);})
   }
 
 }

@@ -14,6 +14,8 @@ import { ServiceAddComponent } from './components/service/service-add/service-ad
 import { LogupComponent } from './components/log/logup/logup.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceEditComponent } from './components/service/service-edit/service-edit.component';
+import { ServiceSearchComponent } from './components/service/service-search/service-search.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,13 +27,16 @@ import { ServiceEditComponent } from './components/service/service-edit/service-
     ProfileEditComponent,
     ServiceAddComponent,
     LogupComponent,
-    ServiceEditComponent
+    ServiceEditComponent,
+    ServiceSearchComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule
   ],
   providers: [],
