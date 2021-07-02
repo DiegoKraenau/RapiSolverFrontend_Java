@@ -1,6 +1,6 @@
 export class UserRequestCreate {
   address: string;
-  birthdate: string;
+  birthdate: Date;
   city: string;
   country: string;
   email: string;
@@ -12,7 +12,7 @@ export class UserRequestCreate {
 
   constructor(){
     this.address="";
-    this.birthdate="";
+    this.birthdate= new Date();
     this.city="";
     this.country="";
     this.email="";

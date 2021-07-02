@@ -1,10 +1,9 @@
-okok
 <div id="mensaje2" class="alert alert-success " style="display: none">
   <strong> <p class="padd-top" id="mensaje"></p></strong>
 </div>
 <br>
 
-<div id="labelCrearUsuario"><h2>Registrar Usuario</h2></div><br>
+<div id="labelCrearUsuario"><h2>Registrar Servicio</h2></div><br>
 
 
 <form id="formulario" class="form-signin" [formGroup]="createForm" >
@@ -18,7 +17,10 @@ okok
     <label >Costo:</label> <input formControlName="costo" type="number" class="form-control col-lg-8 col-md-3 col-xs-12" placeholder="$/0">
   </div>
   <div class="form-container" >
-    <label >Categoria:</label> <input formControlName="categoria" type="text"  class="form-control col-lg-8 col-md-3 col-xs-12" placeholder="nombre categoria">
+    <label >Categoria:</label> 
+    <select formControlName="categoria" class="form-control col-lg-8 col-md-3 col-xs-12">
+      <option [value]="category.name" *ngFor="let category of categories" > {{category.name}}</option>
+    </select>
   </div>
 
   <div class="form-container">
