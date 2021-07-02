@@ -1,3 +1,4 @@
+okok
 <div id="mensaje2" class="alert alert-success " style="display: none">
   <strong> <p class="padd-top" id="mensaje"></p></strong>
 </div>
@@ -6,22 +7,39 @@
 <div id="labelCrearUsuario"><h2>Registrar Usuario</h2></div><br>
 
 
-<form id="formulario" class="form-signin" >
-
+<form id="formulario" class="form-signin" [formGroup]="createUser" >
   <div class="form-group" >
-    <label >Nombre:</label> <input type="text" class="form-control col-lg-3 col-md-3 col-xs-12" placeholder="Ingrese Nombres" v-model="usuario.name" minlength="5" maxlength="40" required pattern="[A-Za-z]+">
+    <label >Nombre:</label> <input formControlName="firstname" type="text" class="form-control col-lg-3 col-md-3 col-xs-12" placeholder="Ingrese Nombres" v-model="usuario.name" minlength="5" maxlength="40" required pattern="[A-Za-z]+">
   </div>
   <div class="form-group" >
-    <label >Apellido:</label> <input type="text" class="form-control col-lg-3 col-md-3 col-xs-12" placeholder="Ingrese Apellidos" v-model="usuario.lastName"  minlength="5" maxlength="40" required pattern="[A-Za-z]+">
+    <label >Apellido:</label> <input formControlName="lastname" type="text" class="form-control col-lg-3 col-md-3 col-xs-12" placeholder="Ingrese Apellidos" v-model="usuario.lastName"  minlength="5" maxlength="40" required pattern="[A-Za-z]+">
   </div>
   <div class="form-group" >
-    <label >Email:</label> <input type="email" class="form-control col-lg-3 col-md-3 col-xs-12" placeholder="Ingrese un email" v-model="usuario.email">
+    <label >Email:</label> <input formControlName="email" type="email" class="form-control col-lg-3 col-md-3 col-xs-12" placeholder="Ingrese un email" v-model="usuario.email">
   </div>
   <div class="form-group" >
-    <label >Contraseña::</label> <input type="password" class="form-control col-lg-3 col-md-3 col-xs-12" placeholder="Ingrese una contraseña" v-model="usuario.contraseña" minlength="5" maxlength="40" >
+    <label >Contraseña::</label> <input formControlName="password" type="password" class="form-control col-lg-3 col-md-3 col-xs-12" placeholder="Ingrese una contraseña" v-model="usuario.contraseña" minlength="5" maxlength="40" >
+  </div>
+  <div class="form-group" >
+    <label >Direccion:</label> <input formControlName="address" type="password" class="form-control col-lg-3 col-md-3 col-xs-12" placeholder="Ingrese una contraseña" v-model="usuario.contraseña" minlength="5" maxlength="40" >
+  </div>
+  <div class="form-group" >
+    <label >Cumpleaños:</label> <input formControlName="birthdate" type="password" class="form-control col-lg-3 col-md-3 col-xs-12" placeholder="Ingrese una contraseña" v-model="usuario.contraseña" minlength="5" maxlength="40" >
+  </div>
+  <div class="form-group" >
+    <label >Pais:</label> <input formControlName="city" type="password" class="form-control col-lg-3 col-md-3 col-xs-12" placeholder="Ingrese una contraseña" v-model="usuario.contraseña" minlength="5" maxlength="40" >
+  </div>
+  <div class="form-group" >
+    <label >Ciudad:</label> <input formControlName="country" type="password" class="form-control col-lg-3 col-md-3 col-xs-12" placeholder="Ingrese una contraseña" v-model="usuario.contraseña" minlength="5" maxlength="40" >
+  </div>
+  <div class="form-group" >
+    <label >Celular:</label> <input formControlName="phone" type="password" class="form-control col-lg-3 col-md-3 col-xs-12" placeholder="Ingrese una contraseña" v-model="usuario.contraseña" minlength="5" maxlength="40" >
+  </div>
+  <div class="form-group" >
+    <label >Estado:</label> <input formControlName="state" type="password" class="form-control col-lg-3 col-md-3 col-xs-12" placeholder="Ingrese una contraseña" v-model="usuario.contraseña" minlength="5" maxlength="40" >
   </div>
   <div class="form-group">
-    <button  type="submit"  class="btn btn-primary btn-lg">Agregar</button>
+    <button  type="submit"  class="btn btn-primary btn-lg" (click)="createUserRapisolver()">Agregar</button>
     <br>
     <br>
     <a routerLink="" class="enu" style="color:#000000">No , gracias</a>

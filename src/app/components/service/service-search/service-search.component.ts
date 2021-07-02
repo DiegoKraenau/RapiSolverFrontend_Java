@@ -21,10 +21,10 @@ export class ServiceSearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getServices();
   }
 
-  getServicesByName(){
-    const name=this.form.value.name;
-    this.serviceService.getServicesByName(name).subscribe(data=>{this.services=data; console.log(data)},error => {console.log(error);})
+  getServices(){
+    this.serviceService.getServices().subscribe(data=>{this.services=data; console.log(data)},error => {console.log(error);})
   }
 }

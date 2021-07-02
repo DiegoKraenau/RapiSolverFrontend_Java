@@ -9,9 +9,10 @@
 
 
     <div class="column"  *ngFor="let service of services">
+
       <div class="card">
-        <h3><strong>{{service.service.name}}</strong></h3>
-        <p>{{service.service.category}}</p>
+        <h3><strong>{{service.id}}</strong></h3>
+        <p>{{service.detail}}</p>
         <p>Costo:{{service.price}} S/</p>
       </div>
     </div>

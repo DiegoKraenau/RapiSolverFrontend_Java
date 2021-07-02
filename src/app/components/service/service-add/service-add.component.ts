@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {ServiceService} from "../../../services/Rapiservice/service.service";
+import {RapiServiceRequestCreate} from "../../../models/Service/RapiServiceRequestCreate";
+import {Category} from "../../../models/Service/Category";
 
 @Component({
   selector: 'app-service-add',
@@ -9,19 +11,31 @@ import {ServiceService} from "../../../services/Rapiservice/service.service";
 })
 export class ServiceAddComponent implements OnInit {
 
-  form:FormGroup;
 
-  constructor(private fb:FormBuilder ,private serviceService:ServiceService) {
-    this.form=this.fb.group({
-      name:['',Validators.required],
-      description:['',Validators.required],
-      costo:['',Validators.required],
-      categoria:['',Validators.required]
-    })
+
+  constructor(private serviceService:ServiceService) {
+    nombre: new FormControl('',[Validators.required]);
+      description: new FormControl('',[Validators.required]);
+      costo: new FormControl('',[Validators.required]);
+      categoria: new FormControl('',[Validators.required]);
+
+    this.createForm= new FormGroup({
+      nombre: new FormControl('',[Validators.required]),
+      description: new FormControl('',[Validators.required]),
+      costo: new FormControl('',[Validators.required]),
+      categoria: new FormControl('',[Validators.required])
+    });
+  }
+  createForm: FormGroup;
+  categories?: Category[];
+  ngOnInit(): void  {
+    this.getcategories();
   }
 
-  ngOnInit(): void {
+  getcategories(){
+    this.serviceService.getCategories().subscribe(data=>{this.categories=data; console.log(data)},error => {console.log(error);})
   }
+
 
 
 

@@ -5,25 +5,35 @@
   <strong> <p class="padd-top" id="mensaje3"></p><a href=""> aqui</a></strong>
 </div>
 <div id="labelCrearUsuario"><h2>Registrar Servicio</h2></div><br>
-<form id="formulario" [formGroup]="form">
-  <div class="form-group" >
-    <label >Nombre:</label> <input type="text" id="label1" class="form-control col-lg-3 col-md-3 col-xs-12" placeholder="Ingrese nombre del servicio" id="nombre" minlength="5" maxlength="40" required pattern="[A-Za-z]+">
+<form [formGroup]="createForm">
+  <div class="mat-form-field">
+    <mat-form-field appearance="fill">
+      <mat-label>Nombre:</mat-label>
+      <input matInput formGroupName="nombre" >
+    </mat-form-field>
   </div>
-  <div class="form-group" >
-    <label >Descripción:</label> <br><textarea  id="label2" class="form-control col-lg-3 col-md-3 col-xs-12" id="description" rows="10" cols="40" minlength="5" maxlength="100" placeholder="Escribe aquí tus comentarios"></textarea>
+
+  <label >Nombre:</label>
+  <div class="form-container" >
+    <label >Descripción:</label>
+    <br><textarea  formControlName="description" placeholder="Escribe aquí tus comentarios"></textarea>
   </div>
-  <div class="form-group" >
-    <label >Costo:</label> <input type="text" id="label3" class="form-control col-lg-3 col-md-3 col-xs-12" id="costo" placeholder="Ingrese el costo del servicio" >
+  <div class="form-container" >
+    <label >Costo:</label>
+    <input type="number" formControlName="costo" placeholder="Ingrese el costo del servicio" />
   </div>
-  <div class="form-group" >
-    <label >Categoría:</label><br>
-    <select id="label4" class="browser-default custom-select form-control col-lg-3 col-md-3 col-xs-12" id="categoria">
-      <option selected >Selección la categoría</option>
-      <option :key="categoria.serviceCategoryId">Categoria.categoryName</option>
-    </select>
-  </div>
+
+    <mat-label >Categoría:</mat-label><br>
+    <mat-form-field appearance="fill" class="form-container">
+      <mat-label>Choose an option</mat-label>
+      <mat-select >
+        <mat-option *ngFor="let category of categories">{{category.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
   <div class="form-group" >
 
+
+
   </div>
-  <button id="envio" type="submit"  style="background-color:#fed136" class="btn btn-light">Agregar</button>
+  <button id="envio" type="submit"  style="background-color:#fed136" class="btn btn-light" >">Agregar</button>
 </form>
