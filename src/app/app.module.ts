@@ -20,6 +20,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { HomeComponent } from './components/home/home.component';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +35,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     ServiceAddComponent,
     LogupComponent,
     ServiceEditComponent,
-    ServiceSearchComponent
+    ServiceSearchComponent,
+    HomeComponent
 
   ],
   imports: [
@@ -45,7 +49,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatCardModule,
     MatSelectModule,
     MatFormFieldModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MDBBootstrapModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
