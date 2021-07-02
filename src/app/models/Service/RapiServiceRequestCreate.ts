@@ -1,9 +1,9 @@
 export class RapiServiceRequestCreate {
-    detail: string;
-    price: number;
-    serviceName: string;
-    categoryName: string;
-    supplierId: number;
+  categoryName: string;
+  detail: string;
+  price: number;
+  serviceName: string;
+  supplierId: number;
 
 
 	constructor(serviceName: string,detail: string,price: number,categoryName: string,supplierId:number) {

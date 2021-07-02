@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   HOST_URL: 'http://localhost:8089/api/v1',
-  HOST_URL2: 'http://localhost:8088/api/v1'
+  HOST_URL2: 'http://localhost:8088/api/v1',
+  HOST_URL3: 'http://localhost:8090/api/v1'
 };
 
 /*

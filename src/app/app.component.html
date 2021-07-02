@@ -6,19 +6,13 @@
         <a *ngIf="router.url==='/' || router.url==='/about' || router.url==='/register'" routerLink="" class="nav-link">Inicio Sesion</a>
       </li>
       <li class="nav-item">
-        <a *ngIf="router.url!=='/' && router.url!=='/about' && router.url!=='/register'" routerLink="profile" class="nav-link" >Mi perfil</a>
+        <a *ngIf="router.url!=='/' && router.url!=='/about' && router.url!=='/register'" routerLink="/home" class="nav-link" >Principal</a>
       </li>
       <li class="nav-item">
         <a *ngIf="router.url!=='/' && router.url!=='/about' && router.url!=='/register'" routerLink="service_add" class="nav-link" >Publicar Servicio</a>
       </li>
       <li class="nav-item">
         <a *ngIf="router.url!=='/' && router.url!=='/about' && router.url!=='/register'" routerLink="services" class="nav-link" >Buscar Servicio</a>
-      </li>
-      <li class="nav-item">
-        <a *ngIf="router.url!=='/' && router.url!=='/about' && router.url!=='/register'" routerLink="providers" class="nav-link" >Buscar Proveedor</a>
-      </li>
-      <li class="nav-item">
-        <a *ngIf="router.url==='/' || router.url==='/about' || router.url==='/register'" routerLink="about" class="nav-link">¿Quienes somos?</a>
       </li>
     </ul>
   </nav>

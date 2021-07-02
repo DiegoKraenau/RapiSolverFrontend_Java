@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
 })
 export class LogupService {
 
-  Url: string = `${environment.HOST_URL}/user/customer` 
+  Url: string = `${environment.HOST_URL3}/user/supplier`
 
   constructor(private http: HttpClient) {}
 

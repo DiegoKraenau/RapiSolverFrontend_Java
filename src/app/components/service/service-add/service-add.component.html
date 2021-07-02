@@ -1,39 +1,30 @@
+okok
 <div id="mensaje2" class="alert alert-success " style="display: none">
   <strong> <p class="padd-top" id="mensaje"></p></strong>
 </div>
-<div id="mensaje4" class="alert alert-danger " style="display: none">
-  <strong> <p class="padd-top" id="mensaje3"></p><a href=""> aqui</a></strong>
-</div>
-<div id="labelCrearUsuario"><h2>Registrar Servicio</h2></div><br>
-<form [formGroup]="createForm">
-  <div class="mat-form-field">
-    <mat-form-field appearance="fill">
-      <mat-label>Nombre:</mat-label>
-      <input matInput formGroupName="nombre" >
-    </mat-form-field>
-  </div>
+<br>
 
-  <label >Nombre:</label>
+<div id="labelCrearUsuario"><h2>Registrar Usuario</h2></div><br>
+
+
+<form id="formulario" class="form-signin" [formGroup]="createForm" >
   <div class="form-container" >
-    <label >Descripción:</label>
-    <br><textarea  formControlName="description" placeholder="Escribe aquí tus comentarios"></textarea>
+    <label >Nombre:</label> <input formControlName="nombre" type="text" class="form-control col-lg-3 col-md-3 col-xs-12" placeholder="Ingrese Nombres" >
   </div>
   <div class="form-container" >
-    <label >Costo:</label>
-    <input type="number" formControlName="costo" placeholder="Ingrese el costo del servicio" />
+    <label >Descripcion:</label> <input formControlName="description" type="text" class="form-control col-lg-3 col-md-3 col-xs-12" placeholder="Ingrese Descripcion del servicio" >
+  </div>
+  <div class="form-container" >
+    <label >Costo:</label> <input formControlName="costo" type="number" class="form-control col-lg-8 col-md-3 col-xs-12" placeholder="$/0">
+  </div>
+  <div class="form-container" >
+    <label >Categoria:</label> <input formControlName="categoria" type="text"  class="form-control col-lg-8 col-md-3 col-xs-12" placeholder="nombre categoria">
   </div>
 
-    <mat-label >Categoría:</mat-label><br>
-    <mat-form-field appearance="fill" class="form-container">
-      <mat-label>Choose an option</mat-label>
-      <mat-select >
-        <mat-option *ngFor="let category of categories">{{category.name}}</mat-option>
-      </mat-select>
-    </mat-form-field>
-  <div class="form-group" >
-
-
-
+  <div class="form-container">
+    <button  type="submit"  class="btn btn-primary btn-lg" (click)="createService()">Agregar</button>
+    <br>
+    <br>
+    <a routerLink="" class="enu" style="color:#000000">No , gracias</a>
   </div>
-  <button id="envio" type="submit"  style="background-color:#fed136" class="btn btn-light" >">Agregar</button>
 </form>
